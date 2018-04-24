@@ -1,0 +1,535 @@
+body {
+	font-family: "Arial", sans-serif;
+	line-height: 120%;
+        font-size: 14px;
+}
+h2 {
+    margin-top: 20px;
+}
+.clickable {
+    cursor: pointer;
+}
+
+#click_menuBackGround {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    overflow: hidden;
+    z-index: 11;    
+}
+
+#click_OneRecordView {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 15;
+    position: fixed;
+    text-align: center;
+    display: none;
+}
+#click_allLists_2 {
+    float: left;
+    margin-right: 5px;
+    background-color: lightseagreen;
+    color: white;
+    padding: 1px 3px 1px 3px;
+    border-radius: 3px;
+}
+#oneRecordInner {
+    background-color: whitesmoke;
+    max-width: 750px;
+}
+.oneRecordInner_Desktop {
+    text-align: left;
+    max-height: 85%;
+    min-height: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+.oneRecordViewHidden_Desktop{ 
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+.oneRecordViewShown_Desktop{ 
+  transition: opacity 1s linear;
+  opacity: 1;
+}
+.oneListInner {
+    max-width: 600px;
+    text-align: left;    
+    margin: 0 auto;
+}
+
+.smallFieldNameHeader {
+    font-size: 8px;
+    margin-bottom:-2px;
+    color: lightseagreen;
+}
+/*  Table in edit of fields */
+.mainTable {
+  border: 2px solid #42b983;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.mainTableTh {
+  background-color: lightseagreen;
+  color: rgba(255,255,255,0.66);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 4px 3px;
+  min-width: 2px;
+}
+.mainTableTd {
+  background-color: #f9f9f9;
+  min-height:12px;
+  padding: 2px;
+  font-size: 11px;
+}
+.mainTableChooser {
+    min-width: 60px;
+    font-size: 10px;
+}
+.listViewChooser {
+    min-width: 60px;
+    font-size: 12px;
+}
+.smallTableTr {
+    border: 1px dotted grey;
+    border-radius: 3px;
+}
+.smallTableTd {
+    margin:1px;
+    padding: 0;
+    border-radius: 3px;
+}
+.symbolChooser {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*  Tables for data */
+.fixedheadTable {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.fixedheader {
+    width:100px;
+    min-width:100px; /* temp */
+}
+.fixedheadHead {
+      display: block;
+}
+.fixedheadHead tr {
+      display: block;
+      position: relative;
+}
+.fixedheadBody {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    border-bottom: 2px solid lightseagreen;
+}
+.fixedHeaderEl {
+    /*
+    min-width: 150px; 
+    width:150px;*/
+}
+.fixedHeaderTH {/*
+    min-width: 150px; 
+    width:150px;*/
+  border-left: 1px solid rgba(255,255,255,0.66);
+  border-right: 1px solid rgba(255,255,255,0.66);
+}
+
+
+.ls_grid_sumEl {
+    background-color:lightseagreen;
+    color:white;
+    font-size:10px;
+    text-align:center;
+    border-right: 1px white solid;
+}
+.ls_grid_simple_table {
+  border: 2px solid #42b983;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.ls_grid_simple_th {
+  background-color: lightseagreen;
+  color: rgba(255,255,255,0.66);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 2px 5px;
+  min-width: 2px;
+  font-size: 8px;
+  vertical-align: top;
+  text-align: left;
+}
+.headsorter {
+margin-right: 3px;
+cursor: pointer;
+}
+
+.headName {
+    font-size: 11px;
+}
+.ls_grid_simple_td {
+  background-color: #f9f9f9;
+  border-top: 1px dashed lightgrey;
+  border-right: 1px white solid;
+  min-height:12px;
+  padding: 2px;
+  font-size: 11px;
+}
+.ls_grid_simple_chooser {
+    min-width: 60px;
+    font-size: 14px;
+}
+.ls_grid_notesPanel_outer {
+
+}
+.lsFilterHolder {
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    border:none;
+    font-size:11px;
+    padding:2px;
+    margin-top: -2px;
+}
+.lsNoteHolder {
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    border:1px grey dotted;
+    border-top:none;
+    font-size:11px;
+    padding:2px;
+    padding-right: 5px;
+}
+
+.lsNoteEntry {
+    width:100%; 
+    border:1px solid lightgrey;
+    color: blue;
+    white-space: pre-wrap;
+}
+.lsNoteEntry::empty:not(:focus):before{
+  content:attr(data-placeholder);
+  color:gray
+}
+.fieldinListViewText {
+    min-height: 15px;
+    border:1px solid lightgrey;    
+}
+.inputPlaceholder:[contenteditable="false"]:empty:not(:focus):before{
+    content:attr(data-placeholder);
+    color:white;
+}
+.lsNoteEntry:[contenteditable="true"]:empty:not(:focus):before{
+  content:attr(data-placeholder);
+  color:gray
+}
+
+
+.linebreak {
+    white-space: pre-line;
+    margin-left: 22px;
+}
+
+#lsRec_header_listoryExpander {
+    cursor:pointer;
+    color:lightseagreen;
+}
+
+
+.menuDropdown {
+    position: relative;
+    display: inline-block;
+}
+.menuDropdownButt {
+    background-color: whitesmoke;
+    color: lightseagreen;
+    border: outset 1px lightseagreen;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 2px 10px 2px 10px;
+    line-height: 100%;
+    'min-width':'60px';
+
+    border-bottom: 1px dotted grey;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.menuShow {display:block;}
+.menuNoshow {display:none;}
+.dropdown-content {
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 120px;
+    overflow: auto;
+    text-align: left;
+    color: lightseagreen;
+    cursor: pointer;
+    font-size: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content span {
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content span:hover {background-color: #ddd}
+
+
+
+.mainFaButt {
+    background-color: whitesmoke;
+    color: lightseagreen;
+    border: outset 2px lightseagreen;
+    border-radius: 5px;
+    margin-top: 3px; 
+    margin-right: 5px;
+    cursor: pointer;
+}
+.mainFaButtRed {
+    background-color: whitesmoke;
+    color: palevioletred;
+    border: outset 2px palevioletred;
+    border-radius: 5px;
+    margin-top: 3px; 
+    margin-right: 5px;
+    cursor: pointer;
+}
+.smallButt {
+    background-color: whitesmoke;
+    color: lightseagreen;
+    border: outset 1px lightseagreen;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 2px 10px 2px 10px;
+    line-height: 100%;
+    'min-width':'60px'
+}
+.padded {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.smallRedButt {
+    background-color: whitesmoke;
+    color: palevioletred;
+    border: outset 1px palevioletred;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0px 5px 0px 5px;
+}
+
+.smallFaButt {
+    background-color: whitesmoke;
+    color: lightseagreen;
+    border: outset 1px lightseagreen;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.smallFaButtText {
+    margin-left: 3px;
+    font-size: 10px;  
+}
+.mainFaButtInner {
+    vertical-align: top;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    background-color: whitesmoke;
+    color: lightseagreen;
+    vertical-align: text-bottom;
+    margin: 5px;
+}
+.mainFaButtInnerRed {
+    vertical-align: top;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    background-color: whitesmoke;
+    color: palevioletred;
+    vertical-align: text-bottom;
+    margin: 5px;
+}
+.mainFaButt:before {
+    font: normal normal normal 14px/1 FontAwesome;  
+    font-size:18px;
+}
+.mainFaButtRed:before {
+    font: normal normal normal 14px/1 FontAwesome;  
+    font-size:18px;
+}
+#lsRec_header_listoryExpanderInner:before {
+    color:whitesmoke;
+    font-weight:bold;
+    background-color: lightseagreen;
+    padding: 1px 3px 1px 3px;
+    cursor: pointer;
+}
+#mainDiv {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left:  0px;
+    right:0px;
+    padding: 5px;
+    padding-left: 10px;
+}
+#allListsInner{
+    text-align: center;
+    margin: 0;
+}
+
+/* Old version
+.mainDivlistListName{
+    cursor: pointer;
+    display: inline-block;
+    height:30px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    border: 1px solid lightseagreen;
+    font-size: 14px;
+    width:300px;
+    font-weight: bold;
+    padding: 5px;
+    color: seagreen;
+}
+*/
+.mainDivlistListName {
+    text-align: left;
+    vertical-align: top;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid lightseagreen;
+    font-size: 14px;
+    width: 29%;
+    max-width: 400px;
+    min-width: 250px;
+    min-height: 59px;
+    font-weight: bold;
+    padding: 5px;
+    color: lightseagreen;
+}
+.mainDivlistListDesc {
+    font-weight: normal;
+    font-size: 12px;
+    color: black;
+    min-width:10px;
+    min-height: 5px;
+    margin-bottom: -5px;
+}
+.mainDivlistListViews {
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    color: grey;
+    margin-top: 4px;
+}
+.mainDivlistListEditButt {
+    float:right;
+    margin-top: 10px;
+    font-size: 10px;
+    padding:3px;
+    background-color: whitesmoke;
+    color: lightseagreen;
+    border: outset 1px lightseagreen;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+
+.topMenuHolder {
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: lightseagreen;
+    padding: 2px 10px 0px 0px;
+    margin-top: -2px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.dimmed {
+    color: darkgrey;
+    border: darkgrey;
+}
+.topMenuTopRightAdjust {
+    margin-right: 50px;    
+}
+.topMenuItems {
+    margin-left: 10px;
+}
+.topMenuText {
+    margin-left: 3px;
+    font-size: 12px;
+}
+.mainListName{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px;
+    color: lightseagreen;
+}
+.mainListDesc {
+    font-weight: normal;
+font-size: 10px;
+    font-style: italic;
+    color: grey;
+    margin-top: -2px;
+    height: 10px;
+    margin-bottom: 6px;
+}
+
+ #warnings{
+    position: absolute;
+    text-align: left;
+    color:red;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px;
+    padding-right: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 20;
+} 
+.warnings_desktop {
+    min-height: 24px;
+    top: 0px;
+    right: 0px;
+    left: 0px;    
+}
+.warnings_mobile {
+    top: 0;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.smallgrey {
+    font-size: 8px;
+    color: darkgrey;
+    font-weight: normal;
+    font-style: italic;
+}
+.spacer {
+    margin-left: 20px;
+}
+  

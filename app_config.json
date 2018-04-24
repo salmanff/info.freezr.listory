@@ -1,0 +1,51 @@
+{
+	"meta": {
+		"app_name":"info.freezr.listory",
+		"app_display_name":"Listory",
+		"app_version": "0.00.01",
+		"only_use_collections_listed":false // true means only accept collections that are in the key list below
+	},
+
+	"pages": {
+		"index": {
+			"page_title":"Listory",
+			"html_file":"index.html",
+			"css_files": ["ls_main.css", "static/font-awesome.min.css"],
+			"script_files": [ "jlos-frozen.js", "dgelements.js","listory.js","sjcl.js"]
+		}
+	},
+	
+
+	"collections": {
+		"listMeta": {
+			"make_data_id":{"manual":true},
+			"strictly_Adhere_To_schema":false,
+			"field_names":{ 
+							"created_locally": {
+								"description":"Date Created (device time)",
+								"type": "date"
+							}, 
+							"fj_modified_locally": {
+								"description":"Date Modified (device time)",
+								"type": "date"
+							}, 
+							"fj_deleted": {
+								"description":"deleted",
+								"type": "bool"
+							}
+						}
+
+			}
+	},
+
+	"permissions": {
+		"list_share": {
+			"type":"object_delegate",
+			"description": "Share lists",
+			"collections": ["records","listMeta","feed","changes"],
+			"sharable_groups":["user"], // default 
+			"requestee_app": null //uses app's own name if null
+		}
+	}
+
+}
